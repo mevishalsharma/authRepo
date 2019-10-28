@@ -1,0 +1,36 @@
+<div class="container" style="align-content: center;">
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>User Login</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Display Name</th>
+                <th>Role</th>
+                <th>Email Id</th>
+                <th>Active </th>
+                <th>
+                    <a [routerLink]="['/webUserItem', 0]" class="btn btn-primary">Add</a>
+                </th>
+            </tr>
+        </thead>
+        <tr *ngFor="let item of webUserList">
+            <td>
+                <u>
+                    <a [routerLink]="['/webUserItem', item.WebUserId]" style="color: blue; cursor: pointer;">{{item.UserLogin}}</a>
+                </u>
+                </td>
+                <td>{{item.Password}}</td>
+            <td>{{item.FirstName}}</td>
+            <td>{{item.LastName}}</td>
+            <td>{{item.DisplayName}}</td>
+            <td>{{item.Role.RoleDescription}}</td>
+            <td>{{item.EmailId}}</td>
+            <td>{{item.Active}}</td>
+            <td>
+                <button type="submit" (click)="deleteWebUser(item.WebUserId)" class="btn btn-primary">Delete</button> 
+            </td>
+        </tr>
+    </table>
+</div>

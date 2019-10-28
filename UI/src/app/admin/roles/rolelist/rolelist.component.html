@@ -1,0 +1,35 @@
+<div class="container" style="align-content: center;">
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Active</th>
+                <th>Action </th>
+                <th>
+                    <a [routerLink]="['/roleitem', 0]" class="btn btn-primary">Add</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of roleList">
+                <td>
+                    <u>
+                        <a [routerLink]="['/roleitem', item.RoleId]" style="color: blue; cursor: pointer;">{{item.Role}}</a>
+                        <!-- <a style="color: blue; cursor: pointer;" (click)="itemSelected(item.RoleId)">{{item.Role}} </a> -->
+                    </u>
+                </td>
+                <td>{{item.RoleDescription}} </td>
+                <td> {{item.Active}} </td>
+                <td>
+                    <!-- <button type="submit" (click)="addRoles()" class="btn btn-primary">Add</button> | -->
+                    <button type="submit" (click)="deleteRoles(item.RoleId)" class="btn btn-primary">Delete</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

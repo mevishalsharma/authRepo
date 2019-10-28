@@ -1,0 +1,99 @@
+<div style="float:left; width: 100%" class="container">
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">User Login: </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="webUserItem.UserLogin" name="UserLogin" />
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                        * Role is required field
+                    </span> -->
+        </div>
+    </div>
+    <div class="row" style="padding: 5px;">
+            <div class="col-sm-2">Password: </div>
+            <div class="col-sm-8">
+                <input type="text" [(ngModel)]="webUserItem.Password" name="Password" />
+                <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                            * Role is required field
+                        </span> -->
+            </div>
+        </div>
+        <div class="row" style="padding: 5px;">
+                <div class="col-sm-2">Compare Password: </div>
+                <div class="col-sm-8">
+                    <input type="text" [(ngModel)]="webUserItem.Password" name="Password" />
+                    <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                                * Role is required field
+                            </span> -->
+                </div>
+            </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">First Name: </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="webUserItem.FirstName" name="FirstName" />
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                            * Role is required field
+                        </span> -->
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Last Name: </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="webUserItem.LastName" name="LastName" />
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                                * Role is required field
+                            </span> -->
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Display Name: </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="webUserItem.DisplayName" name="DisplayName" />
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                                    * Role is required field
+                                </span> -->
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Role Type: </div>
+        <div class="col-sm-8">
+            <select [(ngModel)]="webUserItem.RoleId" class="selectpicker">
+                <option value="0">-- Select --</option>
+                <option *ngFor="let item of roleIdList" value="{{item.RoleId}}">{{item.Role}}</option>
+            </select>
+     
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Email Id: </div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="webUserItem.EmailId" name="EmailId" />
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                                        * Role is required field
+                                    </span> -->
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <label>
+                <input type="checkbox" [(ngModel)]="webUserItem.Active" name="Active" /> Is Active ? </label>
+            <!-- <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                                            * Role is required field
+                                        </span> -->
+        </div>
+    </div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary" (click)="saveWebUser()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="backToList()">Back</button>
+        </div>
+
+    </div>
+</div>

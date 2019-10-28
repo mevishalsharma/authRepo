@@ -1,0 +1,42 @@
+<div style="float:left; width: 100%">
+
+    <div *ngIf="showMessage" [class]="messageClass">{{message}}</div>
+
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Role</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="roleItem.Role" name="Role" />
+            <span *ngIf="(roleItem.Role == null || roleItem.Role == '') && !isFormValid" style="color: red">
+                * Role is required field
+            </span>
+        </div>
+
+
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2">Role Description</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="roleItem.RoleDescription" name="RoleDescription" />
+            <span *ngIf="(roleItem.RoleDescription == null || roleItem.RoleDescription == '') && !isFormValid" style="color: red">
+                * Role description is required field
+            </span>
+        </div>
+
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <label>
+                <input type="checkbox" name="Active" [(ngModel)]="roleItem.Active" />is Active ?</label>
+        </div>
+
+    </div>
+    <div class="row" style="padding: 5px;">
+        <div class="col-sm-12">
+            <button type="submit" class="btn btn-primary" (click)="saveRole()">Submit</button> &nbsp;
+            <button type="submit" class="btn btn-primary" (click)="backToList()">Back</button>
+        </div>
+
+
+    </div>
+</div>
